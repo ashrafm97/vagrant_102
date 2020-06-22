@@ -8,9 +8,10 @@ The Developer Environment is where the developers write code, this will likely b
 ###4 Pillars
 *Flexibility - Adapt to Changes quickly
 *Ease of Use - Easy for developers to be able to use
-*Robustness :-
+*Robustness
 *100% Uptime
 *Fast and Continuous Development
+**
 
 
 ###Negatives
