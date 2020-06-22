@@ -6,8 +6,8 @@ An Environment is a place where code is run and stored.
 The Developer Environment is where the developers write code, this will likely be on an individual's local machine.
 
 ###4 Pillars
-•Flexibility - Adapt to Changes quickly
-•Ease of Use - Easy for developers to be able to use
+•Flexibility
+•Ease of Use
 •Robustness
 •Active 24/7
 •Fast and Continuous Development
@@ -16,10 +16,10 @@ The Developer Environment is where the developers write code, this will likely b
 
 ###Negatives
 
-####Infrastructure
-####Downtime
-####Slow Innovation
-####Dev-ops Problems & Solutions
+•Infrastructure
+•Downtime
+•Slow Innovation
+•Dev-ops Problems & Solutions
 
 
 ###Vagrant
