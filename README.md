@@ -1,3 +1,35 @@
+HELLO!
+
+In order to run this development environment you must first....
+
+1. Download from my GitHub! Clone the repo using the git clone and the link provided:
+
+##Download ruby
+
+Then I can install bundle.
+
+In project folder file (this file) open bash
+
+Then type in : gem install bundler
+
+Now start up VM (make sure the provisions have ran)
+
+CD into environment\spec-tests
+Type in : rake spec
+
+Installing nodejs, this will be in provision https://www.techiediaries.com/ubuntu/install-nodejs-npm-on-ubuntu-20-04/
+
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt install curl
+sudo apt-get install -y nodejs
+The last test is to install pm2, in provision
+npm install -g pm2
+
+
+
+
+
+
 ##Environments
 ###What is an Environment
 An Environment is a place where code is run and stored.
