@@ -1,61 +1,61 @@
-HELLO!
+#Provisioning and tests
 
-In order to run this development environment you must first....
+This exercise utilised vagrant and VirtualBox to make sure the provision file passed all the tests.
 
-1. Download from my GitHub! Clone the repo using the git clone and the link provided:
+#Installation
+To get this box running:
 
-##Download ruby
+1. clone the repo
+2. make sure you are on the root of the project and can see the Vagrant file
+3. then run: ```
+vagrant up
+```
+Now you can see nginx running on 2 locations:
 
-Then I can install bundle.
+ip: 192.168.10.100
+development.local/
+Vagrantfile
+What is it?
+Vagrantfile is a Ruby file used to configure Vagrant on a per-project basis.
 
-In project folder file (this file) open bash
+#What goes on the vagrant file?
+It's main function is to describe the virtual machines required for a project as well as how to configure and provision these machines.
 
-Then type in : gem install bundler
+#Virtual Machine
+##How do I send a folder into my VM?
+config.vm.synced_folder("app", "/app")
+##How do I write a script (sh) for my VM?
+config.vm.provision "shell", path: "environment/provision.sh"
+##How do I spin up a VM?
+vagrant up
+##How do I destroy a VM?
+vagrant destroy
+##How do I re re-run the provision script without killing/destroy the VM?
+vagrant reload
+##Provisioning
+After identifying what packages are missing from the vagrant up output and running the tests you should search the relevant code to install the right packages.
 
-Now start up VM (make sure the provisions have ran)
+Be careful with placement of syntax!
+nginx:
+sudo apt-get update -y
 
-CD into environment\spec-tests
-Type in : rake spec
+sudo apt-get install nginx -y
 
-Installing nodejs, this will be in provision https://www.techiediaries.com/ubuntu/install-nodejs-npm-on-ubuntu-20-04/
+service nginx start
+Nodejs
+apt-get install nodejs npm -y
 
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt install curl
-sudo apt-get install -y nodejs
-The last test is to install pm2, in provision
 npm install -g pm2
 
+sudo nvm use 6
 
+curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+sudo apt-get install -y nodejs
 
+sudo npm install pm2 -g
 
-
-
-##Environments
-###What is an Environment
-An Environment is a place where code is run and stored.
-
-###Dev Environment
-The Developer Environment is where the developers write code, this will likely be on an individual's local machine.
-
-###4 Pillars
-•Flexibility
-•Ease of Use
-•Robustness
-•Active 24/7
-•Fast and Continuous Development
-
-
-
-###Negatives
-
-•Infrastructure
-•Downtime
-•Slow Innovation
-•Dev-ops Problems & Solutions
-
-
-###Vagrant
-•Vagrant is a software used to build and maintain virtual development environments such as VirtualBox.
-
-###Virtual Box
-•VirtualBox is an OS virtual machine software emulator which provides a safe environment for developers
+##Considerations
+Do I have ruby?
+Do I have bundler?
+Have I installed all the ruby dependencies to run the test? - bundle install how do I run the test? rake spec
+Am I in the right location to run these commands?
